@@ -1,9 +1,11 @@
 module Main where
 
+import Paths_mustachio (version)
 import System.Console.GetOpt
 import System.Environment (getArgs)
 import System.Exit (exitFailure)
 import Control.Monad (when)
+import Data.Version (showVersion)
 
 import Parser.Template.CompleteTemplateParser (parseTemplate)
 import Parser.Parser (evalParser, runParser)
@@ -31,6 +33,9 @@ main = do
         maybeData     = optData opts
         maybeOutput   = optOutput opts
         verbose       = optVerbose opts
+        versOpt       = optVersion opts
+
+    when versOpt (putStrLn ("Mustachio version: " ++ showVersion version))
 
     case (maybeTemplate, maybeData, maybeOutput) of
       (Just templateFile, Just dataFile, Just outputFile) -> do

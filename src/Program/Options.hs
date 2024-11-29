@@ -12,7 +12,8 @@ data Options = Options {
     optTemplate :: Maybe FilePath, 
     optData     :: Maybe FilePath,
     optOutput   :: Maybe FilePath,
-    optVerbose  :: Bool
+    optVerbose  :: Bool,
+    optVersion  :: Bool
   }
 
 defaultOptions :: Options
@@ -20,7 +21,8 @@ defaultOptions = Options {
     optTemplate = Nothing,
     optData     = Nothing,
     optOutput   = Nothing,
-    optVerbose  = False
+    optVerbose  = False,
+    optVersion  = False
   }
 
 options :: [OptDescr (Options -> IO Options)]
@@ -41,5 +43,8 @@ options = [
       )) "Display this help message",
   Option ['v'] ["verbose"] (
     NoArg (\opts -> return opts { optVerbose = True })
-    ) "Enable verbose mode"
+    ) "Enable verbose mode",
+  Option [] ["version"] (
+    NoArg (\opts -> return opts { optVersion = True })
+    ) "Print package version"
   ]
