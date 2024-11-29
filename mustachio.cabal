@@ -1,0 +1,84 @@
+cabal-version: 2.2
+
+-- This file has been generated from package.yaml by hpack version 0.37.0.
+--
+-- see: https://github.com/sol/hpack
+
+name:           mustachio
+version:        1.0.0.0
+description:    Please see the README.
+homepage:       https://github.com/olirwin/mustachio#readme
+bug-reports:    https://github.com/olirwin/mustachio/issues
+author:         S. Salvati & O. Irwin
+maintainer:     oliver.irwin@univ-lille.fr
+copyright:      2024 - S. Salvati & O. Irwin
+license:        BSD-3-Clause
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    CHANGELOG.md
+
+source-repository head
+  type: git
+  location: https://github.com/olirwin/mustachio
+
+library
+  exposed-modules:
+      Lib
+      Models.CompleteMustacheModel
+      Models.JsonModel
+      Models.MustacheModel
+      Parser.Data.JsonParser
+      Parser.Parser
+      Parser.Template.CompleteTemplateParser
+      Parser.Template.TemplateParser
+      Parser.Utils
+      Program.Errors
+      Program.FileChecker
+      Program.Options
+      Renderer.MoreRender
+      Renderer.Render
+      Renderer.Utils
+  other-modules:
+      Paths_mustachio
+  autogen-modules:
+      Paths_mustachio
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wredundant-constraints
+  build-depends:
+      base >=4.7 && <5
+    , directory
+  default-language: Haskell2010
+
+executable mustachio
+  main-is: Main.hs
+  other-modules:
+      Paths_mustachio
+  autogen-modules:
+      Paths_mustachio
+  hs-source-dirs:
+      app
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , directory
+    , mustachio
+  default-language: Haskell2010
+
+test-suite mustachio-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_mustachio
+  autogen-modules:
+      Paths_mustachio
+  hs-source-dirs:
+      test
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , directory
+    , mustachio
+  default-language: Haskell2010

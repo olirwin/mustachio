@@ -1,0 +1,26 @@
+{
+    "firstName": "Alice",
+    "lastName": "Smith",
+    "products": [
+      {
+        "name": "SuperWidget",
+        "description": "A versatile and reliable gadget for everyday use.",
+        "price": 19.99
+      },
+      {
+        "name": "MegaGizmo",
+        "description": "An advanced tool for professionals and enthusiasts alike.",
+        "price": 49.99
+      },
+      {
+        "name": "UltraDoohickey",
+        "description": "Compact, powerful, and ready for anything.",
+        "price": 29.99
+      }
+    ],
+    "website": "https://www.gadgetstore.com",
+    "contactEmail": "contact@gadgetstore.com",
+    "company": "GadgetStore",
+    "premium": true
+  }
+  

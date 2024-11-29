@@ -1,0 +1,60 @@
+name:                mustachio
+version:             1.0.0.0
+github:              "olirwin/mustachio"
+license:             BSD-3-Clause
+author:              "S. Salvati & O. Irwin"
+maintainer:          "oliver.irwin@univ-lille.fr"
+copyright:           "2024 - S. Salvati & O. Irwin"
+
+extra-source-files:
+- README.md
+- CHANGELOG.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README.
+
+dependencies:
+- base >= 4.7 && < 5
+- directory
+
+ghc-options:
+- -Wall
+- -Wcompat
+- -Widentities
+- -Wincomplete-record-updates
+- -Wincomplete-uni-patterns
+- -Wmissing-export-lists
+- -Wmissing-home-modules
+- -Wredundant-constraints
+
+library:
+  source-dirs: src
+
+executables:
+  mustachio:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - directory
+    - mustachio
+tests:
+  mustachio-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - directory
+    - mustachio
