@@ -20,6 +20,7 @@ Usage: mustachio [OPTIONS]
   -o FILE  --output=FILE    Path to the output file
   -h       --help           Display this help message
   -v       --verbose        Enable verbose mode
+           --version        Print package version
 ```
 
 ## Error handling
